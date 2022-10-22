@@ -20,9 +20,7 @@ public class ReqResSimulation extends Simulation {
 		return exec(
 			http("Add new user")
 				.post("/api/users/")
-				.body(StringBody("""
-					{"name": "Angel", "job": "Developer"}
-					""".strip()
+				.body(StringBody("{\"name\": \"Angel\", \"job\": \"Developer\"}".strip()
 				)).asJson()
 		);
 	}
