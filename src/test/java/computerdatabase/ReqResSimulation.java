@@ -34,14 +34,23 @@ public class ReqResSimulation extends Simulation {
 		);
 	}
 
+	public ChainBuilder getUserPerPage() {
+		return exec(
+			http("Get user per page 1 - 100")
+			.get("/api/users?page=1&per_page=100")
+		);
+	}
+
 	ScenarioBuilder users = scenario("Users")
 		.exec(createUser()
-			.exec(getUserById())
-		);
+		.exec(getUserById())
+		.exec(getUserPerPage())
+	);
 	ScenarioBuilder admins = scenario("Admins")
 		.exec(createUser()
-			.exec(getUserById())
-		);
+		.exec(getUserById())
+		.exec(getUserPerPage())
+	);
 
 	{
 		setUp(
