@@ -9,7 +9,7 @@ import static io.gatling.javaapi.http.HttpDsl.*;
 
 /**
  * In this simulation we gona test this app
-* url: <a href="https://reqres.in/">reqres.in</a>
+ * url: <a href="https://reqres.in/">reqres.in</a>
  */
 public class ReqResSimulation extends Simulation {
 
